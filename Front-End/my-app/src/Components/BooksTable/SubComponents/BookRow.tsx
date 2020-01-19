@@ -1,8 +1,8 @@
 import React from "react";
-import BookRowModel from "../../../Models/BookRowModel";
+import BookModel from "../../../Models/BookModel";
 
 type Props = {
-  book: BookRowModel;
+  book: BookModel;
 };
 
 export default class BookRow extends React.Component<Props> {

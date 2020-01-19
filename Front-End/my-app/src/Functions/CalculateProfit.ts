@@ -1,6 +1,5 @@
 import TaxMultiplier from "../Constants/TaxMultiplierConstant";
 import BookModel from "../Models/BookModel";
-import BookRowModel from "../Models/BookRowModel";
 /**
  * Truncates the number to a desired amount of decimal places.
  *
@@ -35,7 +34,7 @@ export function truncateToDecimalPlaces(number: number, toDecimalPlaces: number)
  * The number is also rounded to 2 decimal places
  * @param {BookModel} book
  */
-export function calculateProfit(book: BookModel | BookRowModel): number {
+export function calculateProfit(book: BookModel): number {
   const profit: number = book.RetailPrice * TaxMultiplier - book.SupplyPrice;
 
   return truncateToDecimalPlaces(profit, 2);

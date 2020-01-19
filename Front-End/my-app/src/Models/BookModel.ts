@@ -56,4 +56,17 @@ export default interface BookModel extends Identifiable {
    * @memberof BookModel
    */
   Sales: number;
+  /**
+   * The profit after tax.
+   * @type {number}
+   * @memberof BookRowModel
+   */
+  Profit: number;
+
+  /**
+   * The profit of all total sales.
+   * @type {number}
+   * @memberof BookRowModel
+   */
+  TotalProfit: number;
 }
