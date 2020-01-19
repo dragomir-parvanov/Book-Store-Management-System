@@ -1,8 +1,8 @@
 import React from "react";
-import BookModel from "../../../Models/BookModel";
+import BookRowModel from "../../../Models/BookRowModel";
 
 type Props = {
-  book: BookModel;
+  book: BookRowModel;
 };
 
 export default class BookRow extends React.Component<Props> {
@@ -15,9 +15,9 @@ export default class BookRow extends React.Component<Props> {
         <td>{this.props.book.Genre}</td>
         <td>{this.props.book.RetailPrice}</td>
         <td>{this.props.book.SupplyPrice}</td>
-        <td>{this.props.book.SupplyPrice}</td>
-        <td>{this.props.book.SupplyPrice}</td>
-        <td>{this.props.book.SupplyPrice}</td>
+        <td>{this.props.book.Profit}</td>
+        <td>{this.props.book.Sales}</td>
+        <td>{this.props.book.TotalProfit}</td>
       </tr>
     );
   }
