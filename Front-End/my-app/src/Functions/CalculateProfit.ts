@@ -1,5 +1,5 @@
 import TaxMultiplier from "../Constants/TaxMultiplierConstant";
-import BookModel from "../Models/BookModel";
+import BookModel from "../Models/Book/BookModel";
 /**
  * Truncates the number to a desired amount of decimal places.
  *
