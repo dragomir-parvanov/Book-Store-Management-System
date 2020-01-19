@@ -2,10 +2,16 @@ import React from "react";
 import "./App.css";
 import AppNavbar from "./Components/AppNavbar";
 import "bootstrap/dist/css/bootstrap.min.css";
+import BooksTable from "./Components/BooksTable/BooksTable";
 
 class App extends React.Component {
   render(): JSX.Element {
-    return <AppNavbar></AppNavbar>;
+    return (
+      <div>
+        <AppNavbar></AppNavbar>
+        <BooksTable></BooksTable>
+      </div>
+    );
   }
 }
 
