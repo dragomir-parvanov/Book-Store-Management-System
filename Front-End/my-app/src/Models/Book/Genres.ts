@@ -1,6 +1,6 @@
 export default interface Genre {
   /**
-   * The genre of the book.
+   * The genres of the book.
    * @type {string}
    * @memberof BookModel
    */

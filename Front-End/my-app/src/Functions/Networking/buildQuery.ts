@@ -9,7 +9,7 @@ function trueOrFalse(bool: boolean): string {
 }
 
 export default function buildQuery(bookQuery: BookQueryModel): string {
-  let parameters: string[] = ["queryId:" + encodeURIComponent(queryId)];
+  let parameters: string[] = ["?queryId:" + encodeURIComponent(queryId)];
 
   // for key in interface doesnt work on typescript sadly :(.
   if (bookQuery.Authors && bookQuery.Authors.length > 0) {
