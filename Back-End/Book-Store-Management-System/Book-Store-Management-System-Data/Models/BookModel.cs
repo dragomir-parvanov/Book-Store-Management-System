@@ -14,11 +14,11 @@
 
         /// <inheritdoc/>
         [Required]
-        public ICollection<AuthorModel> Authors { get; }
+        public IEnumerable<AuthorModel> Authors { get; set; }
 
         /// <inheritdoc/>
         [Required]
-        public ICollection<Genre> Genres { get; }
+        public IEnumerable<GenreModel> Genres { get; set; }
 
         /// <inheritdoc/>
         [Required]

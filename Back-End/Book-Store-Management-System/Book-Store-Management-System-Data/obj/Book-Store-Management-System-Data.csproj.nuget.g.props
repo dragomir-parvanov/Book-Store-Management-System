@@ -23,6 +23,7 @@
     <PkgStyleCop_Analyzers Condition=" '$(PkgStyleCop_Analyzers)' == '' ">C:\Users\Drago\.nuget\packages\stylecop.analyzers\1.1.118</PkgStyleCop_Analyzers>
     <PkgMicrosoft_NetFramework_Analyzers Condition=" '$(PkgMicrosoft_NetFramework_Analyzers)' == '' ">C:\Users\Drago\.nuget\packages\microsoft.netframework.analyzers\2.9.8</PkgMicrosoft_NetFramework_Analyzers>
     <PkgMicrosoft_NetCore_Analyzers Condition=" '$(PkgMicrosoft_NetCore_Analyzers)' == '' ">C:\Users\Drago\.nuget\packages\microsoft.netcore.analyzers\2.9.8</PkgMicrosoft_NetCore_Analyzers>
+    <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\Drago\.nuget\packages\microsoft.entityframeworkcore.tools\3.1.1</PkgMicrosoft_EntityFrameworkCore_Tools>
     <PkgMicrosoft_CodeQuality_Analyzers Condition=" '$(PkgMicrosoft_CodeQuality_Analyzers)' == '' ">C:\Users\Drago\.nuget\packages\microsoft.codequality.analyzers\2.9.8</PkgMicrosoft_CodeQuality_Analyzers>
     <PkgMicrosoft_CodeAnalysis_VersionCheckAnalyzer Condition=" '$(PkgMicrosoft_CodeAnalysis_VersionCheckAnalyzer)' == '' ">C:\Users\Drago\.nuget\packages\microsoft.codeanalysis.versioncheckanalyzer\2.9.8</PkgMicrosoft_CodeAnalysis_VersionCheckAnalyzer>
     <PkgMicrosoft_CodeAnalysis_FxCopAnalyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_FxCopAnalyzers)' == '' ">C:\Users\Drago\.nuget\packages\microsoft.codeanalysis.fxcopanalyzers\2.9.8</PkgMicrosoft_CodeAnalysis_FxCopAnalyzers>

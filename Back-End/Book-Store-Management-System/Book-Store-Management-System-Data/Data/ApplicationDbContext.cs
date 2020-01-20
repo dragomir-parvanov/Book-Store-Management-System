@@ -11,11 +11,24 @@
     /// </summary>
     public class ApplicationDbContext: DbContext
     {
+        /// <summary>
+        /// Gets or sets the books in the database.
+        /// </summary>
         public DbSet<BookModel> Books { get; set; }
 
+        /// <summary>
+        /// Gets or sets the authors in the database.
+        /// </summary>
         public DbSet<AuthorModel> Authors { get; set; }
 
-        public DbSet<Genre> Genres { get; set; }
+        /// <summary>
+        /// Gets or sets the genres in the database.
+        /// </summary>
+        public DbSet<GenreModel> Genres { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+        }
 
         /// <summary>
         /// Called when [configuring].
@@ -29,12 +42,7 @@
                 throw new ArgumentNullException(nameof(builder));
             }
 
-            if (!builder.IsConfigured)
-            {
-                builder.UseSqlServer(@"Server=DESKTOP-36GUPUH;Database=BookStoreManagementSystem;Integrated Security=True");
-            }
-
-            base.OnConfiguring(builder);
+            builder.UseSqlServer(@"Server=DESKTOP-36GUPUH;Database=BookStoreManagementSystemTest;Integrated Security=True");
         }
     }
 }
