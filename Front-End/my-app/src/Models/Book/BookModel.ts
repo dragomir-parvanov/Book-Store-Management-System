@@ -12,6 +12,7 @@ export default interface BookModel extends Identifiable, Authors, Genres {
   Authors: string[];
 
   Genres: string[];
+
   /**
    *The book name.
    * @type {string}

@@ -1,11 +1,29 @@
 import React from "react";
 import { Table } from "react-bootstrap";
+import { shouldRenderOrAppend } from "../../Observables/booksObservable";
+import BookRow from "./SubComponents/BookRow";
+
+type Props = {};
 
 type State = {
   rows: JSX.Element[];
 };
 
-export default class BooksTable extends React.Component {
+export default class BooksTable extends React.Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+
+    shouldRenderOrAppend.subscribe({
+      next: s => {
+        if (s.value) {
+          this.setState({ rows: s.Books.map(b => <BookRow key={b.Id} book={b}></BookRow>) });
+        } else {
+          this.setState({ rows: [...this.state.rows, ...s.Books.map(b => <BookRow key={b.Id} book={b}></BookRow>)] });
+        }
+      }
+    });
+  }
+
   state: State = {
     rows: []
   };
