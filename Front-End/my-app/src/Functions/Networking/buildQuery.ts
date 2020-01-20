@@ -8,9 +8,17 @@ function trueOrFalse(bool: boolean): string {
   return bool ? "1" : "0";
 }
 
-export default function buildQuery(query: BookQueryModel): string {
+/**
+ * Building an url query.
+ * @export
+ * @param {BookQueryModel} query th book query that will be passed to the server.
+ * @param {number} count of books to be downloaded
+ * @returns {string}
+ */
+export default function buildQuery(query: BookQueryModel, count: number): string {
   let parameters: string[] = ["?queryId:" + encodeURIComponent(queryId)];
 
+  parameters.push("count=" + count);
   // couldnt make for key in interface work in typescript like for key in object :(
   if (query.Authors && query.Authors.length > 0) {
     parameters.push(encodeURIComponent("authors") + "=" + encodeURIComponent(query.Authors.join(",")));

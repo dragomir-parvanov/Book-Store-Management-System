@@ -4,6 +4,7 @@ import { renderOrAppend } from "../../Observables/booksObservable";
 import BookRow from "./SubComponents/BookRow";
 import { generateBooks } from "../../Testing/generateBooks";
 import { retailPriceOnClick, supplyPriceOnClick, totalProfitOnClick, salesOnClick, profitOnClick } from "../../Functions/sortings";
+import { getMoreBooks } from "../../Networking/getBooks";
 
 type Props = {};
 

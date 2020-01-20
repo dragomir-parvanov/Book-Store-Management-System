@@ -9,14 +9,6 @@ import BookModel from "../Models/Book/BookModel";
  * @returns
  */
 export function truncateToDecimalPlaces(number: number, toDecimalPlaces: number): number {
-  if (!number) {
-    throw new Error("number is null");
-  }
-
-  if (!toDecimalPlaces) {
-    throw new Error("toDecimalPlaces is null");
-  }
-
   const regex = new RegExp("^-?\\d+(?:.\\d{0," + (toDecimalPlaces || -1) + "})?");
 
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion

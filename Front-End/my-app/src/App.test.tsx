@@ -17,5 +17,5 @@ test("Building queries", () => {
     SalesOrderByAscending: false
   };
 
-  console.log(buildQuery(testBookQuery));
+  console.log(buildQuery(testBookQuery, 5));
 });

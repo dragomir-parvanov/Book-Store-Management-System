@@ -1,29 +1,29 @@
 import BookModel from "../../Models/Book/BookModel";
-import { EntitiesPlacementModel } from "../../Models/Networking/EntitiesPlacementModel";
+import { ServerResponseModel } from "../../Models/Networking/ServerResponseModel";
 import { downloadedBooks } from "../../Observables/booksObservable";
 
 /**
  * Builds a render of a BookModel[] the way it should be represented in the table.
  * @export
- * @param {EntitiesPlacementModel} entitiesPlacement
+ * @param {ServerResponseModel} serverResponse
  * @returns {BookModel[]}
  */
-export function buildRender(entitiesPlacement: EntitiesPlacementModel): BookModel[] {
+export function buildRender(serverResponse: ServerResponseModel): BookModel[] {
   const buildedRender: BookModel[] = [];
-  entitiesPlacement.beforeAll.forEach(entity => {
+  serverResponse.beforeAll.forEach(entity => {
     const book = downloadedBooks.find(b => b.Id === entity.Id);
     if (!book) {
-      throw new Error(`We should have downloaded book with id "${entity.Id}" but its not present in our downloaded book collection`);
+      throw new Error(`We should had downloaded book with id "${entity.Id}" but its not present in our downloaded book collection`);
     }
     buildedRender.push(book);
   });
 
-  entitiesPlacement.inBetween.forEach(entityPlacement => {
+  serverResponse.inBetween.forEach(entityPlacement => {
     buildedRender.push(entityPlacement.book);
     entityPlacement.entities.forEach(entity => {
       const book = downloadedBooks.find(book => book.Id === entity.Id);
       if (!book) {
-        throw new Error(`We should have downloaded book with id "${entity.Id}" but its not present in our downloaded book collection`);
+        throw new Error(`We should had downloaded book with id "${entity.Id}" but its not present in our downloaded book collection`);
       }
       buildedRender.push(book);
     });

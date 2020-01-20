@@ -6,6 +6,7 @@ import BooksTable from "./Components/BooksTable/BooksTable";
 import { subscribeToBookQuery } from "./Networking/getBooks";
 
 subscribeToBookQuery();
+
 class App extends React.Component {
   render(): JSX.Element {
     return (
