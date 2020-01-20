@@ -1,6 +1,6 @@
 import Authors from "../Book/Authors";
 import Genres from "../Book/Genres";
-import DateQueryModel from "../DateQueryModel";
+import DateQueryModel from "../Networking/DateQueryModel";
 
 export default interface BookQueryModel extends Authors, Genres {
   /**

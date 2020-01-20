@@ -8,46 +8,46 @@ function trueOrFalse(bool: boolean): string {
   return bool ? "1" : "0";
 }
 
-export default function buildQuery(bookQuery: BookQueryModel): string {
+export default function buildQuery(query: BookQueryModel): string {
   let parameters: string[] = ["?queryId:" + encodeURIComponent(queryId)];
 
-  // for key in interface doesnt work on typescript sadly :(.
-  if (bookQuery.Authors && bookQuery.Authors.length > 0) {
-    parameters.push(encodeURIComponent("authors") + "=" + encodeURIComponent(bookQuery.Authors.join(",")));
+  // couldnt make for key in interface work in typescript like for key in object :(
+  if (query.Authors && query.Authors.length > 0) {
+    parameters.push(encodeURIComponent("authors") + "=" + encodeURIComponent(query.Authors.join(",")));
   }
 
-  if (bookQuery.FromDate) {
-    const { Year, Month, Date } = bookQuery.FromDate;
+  if (query.FromDate) {
+    const { Year, Month, Date } = query.FromDate;
     parameters = [...parameters, `fromYear=${encodeURIComponent(Year)}`, `fromMonth=${encodeURIComponent(Month)}`, `fromDate=${encodeURIComponent(Date)}`];
   }
 
-  if (bookQuery.ToDate) {
-    const { Year, Month, Date } = bookQuery.ToDate;
+  if (query.ToDate) {
+    const { Year, Month, Date } = query.ToDate;
     parameters = [...parameters, `toYear=${encodeURIComponent(Year)}`, `toMonth=${encodeURIComponent(Month)}`, `toDate=${encodeURIComponent(Date)}`];
   }
 
-  if (bookQuery.Genres && bookQuery.Genres.length > 0) {
-    parameters.push("genres=" + encodeURIComponent(bookQuery.Genres.join(",")));
+  if (query.Genres && query.Genres.length > 0) {
+    parameters.push("genres=" + encodeURIComponent(query.Genres.join(",")));
   }
 
-  if (bookQuery.ProfitOrderByAscending !== undefined) {
-    parameters.push("profitOrderByAscending=" + trueOrFalse(bookQuery.ProfitOrderByAscending));
+  if (query.ProfitOrderByAscending !== undefined) {
+    parameters.push("profitOrderByAscending=" + trueOrFalse(query.ProfitOrderByAscending));
   }
 
-  if (bookQuery.RetailPriceOrderByAscending !== undefined) {
-    parameters.push("retailPriceOrderByAscending=" + trueOrFalse(bookQuery.RetailPriceOrderByAscending));
+  if (query.RetailPriceOrderByAscending !== undefined) {
+    parameters.push("retailPriceOrderByAscending=" + trueOrFalse(query.RetailPriceOrderByAscending));
   }
 
-  if (bookQuery.SupplyPriceOrderByAscending !== undefined) {
-    parameters.push("supplyPriceOrderByAscending=" + trueOrFalse(bookQuery.SupplyPriceOrderByAscending));
+  if (query.SupplyPriceOrderByAscending !== undefined) {
+    parameters.push("supplyPriceOrderByAscending=" + trueOrFalse(query.SupplyPriceOrderByAscending));
   }
 
-  if (bookQuery.SalesOrderByAscending !== undefined) {
-    parameters.push("salesOrderByAscending=" + trueOrFalse(bookQuery.SalesOrderByAscending));
+  if (query.SalesOrderByAscending !== undefined) {
+    parameters.push("salesOrderByAscending=" + trueOrFalse(query.SalesOrderByAscending));
   }
 
-  if (bookQuery.TotalProfitOrderByAscending !== undefined) {
-    parameters.push("totalProfitOrderByAscending=" + trueOrFalse(bookQuery.TotalProfitOrderByAscending));
+  if (query.TotalProfitOrderByAscending !== undefined) {
+    parameters.push("totalProfitOrderByAscending=" + trueOrFalse(query.TotalProfitOrderByAscending));
   }
 
   return parameters.join("&");

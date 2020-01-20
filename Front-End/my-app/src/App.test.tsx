@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import App from "./App";
-import { truncateToDecimalPlaces } from "./Functions/CalculateProfit";
+import { truncateToDecimalPlaces } from "./Functions/calculateProfit";
 import BookQueryModel from "./Models/Networking/BookQueryModel";
 import buildQuery from "./Functions/Networking/buildQuery";
 

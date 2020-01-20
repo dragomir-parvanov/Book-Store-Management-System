@@ -4,5 +4,5 @@
  * @interface Identifiable
  */
 export default interface Identifiable {
-  Id: string;
+  Id: number;
 }

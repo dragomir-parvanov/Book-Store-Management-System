@@ -4,7 +4,7 @@
  * @interface DateQueryModel
  */
 export default interface DateQueryModel {
-  Day: number;
+  Date: number;
   Month: number;
   Year: number;
 }

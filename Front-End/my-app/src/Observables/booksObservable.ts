@@ -1,7 +1,7 @@
 import { BehaviorSubject } from "rxjs";
 import BookModel from "../Models/Book/BookModel";
-import ShouldRenderOrAppendModel from "../Models/ShouldRenderOrAppendModel";
+import RenderOrAppendModel from "../Models/RenderOrAppendModel";
 
 export const downloadedBooks: BookModel[] = [];
 
-export const shouldRenderOrAppend = new BehaviorSubject<ShouldRenderOrAppendModel>({ value: true, Books: [...downloadedBooks] });
+export const renderOrAppend = new BehaviorSubject<RenderOrAppendModel>({ value: true, Books: [...downloadedBooks] });

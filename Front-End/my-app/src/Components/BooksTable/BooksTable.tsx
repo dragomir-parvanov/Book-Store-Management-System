@@ -1,7 +1,9 @@
 import React from "react";
 import { Table } from "react-bootstrap";
-import { shouldRenderOrAppend } from "../../Observables/booksObservable";
+import { renderOrAppend } from "../../Observables/booksObservable";
 import BookRow from "./SubComponents/BookRow";
+import { generateBooks } from "../../Testing/generateBooks";
+import { retailPriceOnClick, supplyPriceOnClick, totalProfitOnClick, salesOnClick, profitOnClick } from "../../Functions/sortings";
 
 type Props = {};
 
@@ -13,7 +15,8 @@ export default class BooksTable extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    shouldRenderOrAppend.subscribe({
+    // if should renderOrAppend value is true, re-render everything, if its false, just append
+    renderOrAppend.subscribe({
       next: s => {
         if (s.value) {
           this.setState({ rows: s.Books.map(b => <BookRow key={b.Id} book={b}></BookRow>) });
@@ -24,6 +27,12 @@ export default class BooksTable extends React.Component<Props, State> {
     });
   }
 
+  componentDidMount(): void {
+    renderOrAppend.next({
+      value: true,
+      Books: generateBooks(50)
+    });
+  }
   state: State = {
     rows: []
   };
@@ -34,14 +43,14 @@ export default class BooksTable extends React.Component<Props, State> {
         <thead>
           <tr>
             <th>Name</th>
-            <th>Author</th>
+            <th>Authors</th>
             <th>Date released</th>
             <th>Genre</th>
-            <th>Retail price</th>
-            <th>Supply price</th>
-            <th>Profit</th>
-            <th>Sales</th>
-            <th>Total profit</th>
+            <th onClick={retailPriceOnClick}>Retail price</th>
+            <th onClick={supplyPriceOnClick}>Supply price</th>
+            <th onClick={profitOnClick}>Profit</th>
+            <th onClick={salesOnClick}>Sales</th>
+            <th onClick={totalProfitOnClick}>Total profit</th>
           </tr>
         </thead>
         <tbody>{this.state.rows}</tbody>
