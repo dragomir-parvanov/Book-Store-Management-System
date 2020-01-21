@@ -6,3 +6,6 @@ E:\Desktop\Book-Store-Management-System\Back-End\Book-Store-Management-System\Bo
 E:\Desktop\Book-Store-Management-System\Back-End\Book-Store-Management-System\Book-Store-Management-System-Services\obj\Debug\netstandard2.1\Book-Store-Management-System-Services.AssemblyInfoInputs.cache
 E:\Desktop\Book-Store-Management-System\Back-End\Book-Store-Management-System\Book-Store-Management-System-Services\obj\Debug\netstandard2.1\Book-Store-Management-System-Services.AssemblyInfo.cs
 E:\Desktop\Book-Store-Management-System\Back-End\Book-Store-Management-System\Book-Store-Management-System-Services\obj\Debug\netstandard2.1\Book-Store-Management-System-Services.csproj.CopyComplete
+E:\Desktop\Book-Store-Management-System\Back-End\Book-Store-Management-System\Book-Store-Management-System-Services\bin\Debug\netstandard2.1\Book-Store-Management-System-Services.pdb
+E:\Desktop\Book-Store-Management-System\Back-End\Book-Store-Management-System\Book-Store-Management-System-Services\obj\Debug\netstandard2.1\Book-Store-Management-System-Services.dll
+E:\Desktop\Book-Store-Management-System\Back-End\Book-Store-Management-System\Book-Store-Management-System-Services\obj\Debug\netstandard2.1\Book-Store-Management-System-Services.pdb

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Book_Store_Management_System_Data.Data;
+using Book_Store_Management_System_Services.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,6 +31,8 @@ namespace Book_Store_Management_System
             services.AddDbContext<ApplicationDbContext>(options =>
              options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"))
                     .UseLazyLoadingProxies());
+
+            services.AddScoped(typeof(IGetBooksByQueryService), typeof(GetBooksByQueryService));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

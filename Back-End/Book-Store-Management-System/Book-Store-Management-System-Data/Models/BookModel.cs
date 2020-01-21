@@ -1,11 +1,14 @@
 ﻿namespace Book_Store_Management_System_Data.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Runtime.Serialization;
     using System.Text;
 
     /// <inheritdoc/>
+    [DataContract]
     public class BookModel : IBookModel
     {
         /// <inheritdoc/>

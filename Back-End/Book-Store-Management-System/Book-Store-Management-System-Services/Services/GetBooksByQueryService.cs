@@ -2,11 +2,13 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Linq.Expressions;
     using Book_Store_Management_System_Data.Data;
     using Book_Store_Management_System_Data.Models;
     using Book_Store_Management_System_Services.Tools;
     using Microsoft.AspNetCore.Http;
+    using Microsoft.EntityFrameworkCore;
 
     /// <inheritdoc/>
     public class GetBooksByQueryService : DbContextService, IGetBooksByQueryService
@@ -22,14 +24,13 @@
         }
 
         /// <inheritdoc/>
-        public IEnumerable<BookModel> GetBooks(IQueryCollection query)
+        public IEnumerable<IBookModel> GetBooks(IQueryCollection query)
         {
             Expression<Func<BookModel, bool>> expr1 = b => b.Profit < 5;
 
             Expression<Func<BookModel, bool>> expr2 = b => b.Profit > 0;
-
-            expr1 = expr1.And(expr2);
-
+            var books = this.DbContext.Books.Where(expr1).ToListAsync().Result;
+            return books;
         }
     }
 }

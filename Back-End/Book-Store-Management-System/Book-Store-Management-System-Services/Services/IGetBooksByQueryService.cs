@@ -13,6 +13,6 @@
         /// Getting all books by the query from the database.
         /// </summary>
         /// <param name="query">The url query that is coming from the request.</param>
-        IEnumerable<BookModel> GetBooks(IQueryCollection query);
+        IEnumerable<IBookModel> GetBooks(IQueryCollection query);
     }
 }

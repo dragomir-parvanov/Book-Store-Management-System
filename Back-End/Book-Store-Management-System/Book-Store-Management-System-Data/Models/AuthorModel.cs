@@ -1,24 +1,22 @@
 ﻿namespace Book_Store_Management_System_Data.Models
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Text;
+    using System.Runtime.Serialization;
 
-    /// <summary>
-    /// How an author should be presented in the database.
-    /// </summary>
-    public class AuthorModel : IIdentifiable
+    /// <inheritdoc/>
+    [DataContract]
+    public class AuthorModel : IAuthorModel
     {
         /// <inheritdoc/>
-        [Key]
+        [DataMember]
         public int Id { get; set; }
 
-        /// <summary>
-        /// Gets or sets the name of the author.
-        /// </summary>
+        /// <inheritdoc/>
+        [DataMember]
         public string Name { get; set; }
 
+        /// <inheritdoc/>
         public virtual ICollection<BookModel> Books { get; set; }
     }
 }

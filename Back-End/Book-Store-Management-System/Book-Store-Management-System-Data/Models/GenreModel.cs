@@ -1,22 +1,22 @@
 ﻿namespace Book_Store_Management_System_Data.Models
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Text;
+    using System.Runtime.Serialization;
 
-    /// <summary>
-    /// How a book genre should be represented in the database.
-    /// </summary>
+    /// <inheritdoc/>
+    [DataContract]
     public class GenreModel : IIdentifiable
     {
         /// <inheritdoc/>
         [Key]
+        [DataMember]
         public int Id { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the genre.
         /// </summary>
+        [DataMember]
         public string Name { get; set; }
 
         /// <summary>
