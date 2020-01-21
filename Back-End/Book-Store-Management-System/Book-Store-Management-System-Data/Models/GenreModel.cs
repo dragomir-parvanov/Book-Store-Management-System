@@ -8,7 +8,7 @@
     /// <summary>
     /// How a book genre should be represented in the database.
     /// </summary>
-    public class GenreModel: IIdentifiable
+    public class GenreModel : IIdentifiable
     {
         /// <inheritdoc/>
         [Key]
@@ -18,5 +18,10 @@
         /// Gets or sets the name of the genre.
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// The books that belongs to that genre.
+        /// </summary>
+        public virtual ICollection<BookModel> Books { get; set; }
     }
 }

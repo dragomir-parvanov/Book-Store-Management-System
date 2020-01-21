@@ -12,12 +12,12 @@
         /// <summary>
         /// Gets the authors of the book.
         /// </summary>
-        public IEnumerable<AuthorModel> Authors { get; }
+        public AuthorModel Author { get; }
 
         /// <summary>
         /// Gets the genres of the book.
         /// </summary>
-        public IEnumerable<GenreModel> Genres { get; }
+        public GenreModel Genre { get; }
 
         /// <summary>
         /// Gets or sets the name of the book.

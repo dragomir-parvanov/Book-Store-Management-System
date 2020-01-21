@@ -19,6 +19,6 @@
         /// </summary>
         public string Name { get; set; }
 
-        public List<BookModel> Books { get; set; }
+        public virtual ICollection<BookModel> Books { get; set; }
     }
 }

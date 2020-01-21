@@ -14,11 +14,11 @@
 
         /// <inheritdoc/>
         [Required]
-        public IEnumerable<AuthorModel> Authors { get; set; }
+        public virtual AuthorModel Author { get; set; }
 
         /// <inheritdoc/>
         [Required]
-        public IEnumerable<GenreModel> Genres { get; set; }
+        public virtual GenreModel Genre { get; set; }
 
         /// <inheritdoc/>
         [Required]

@@ -26,15 +26,10 @@ namespace Book_Store_Management_System_Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("BooksId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BooksId");
 
                     b.ToTable("Authors");
                 });
@@ -46,8 +41,14 @@ namespace Book_Store_Management_System_Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DateReleased")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("GenreId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -67,6 +68,10 @@ namespace Book_Store_Management_System_Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AuthorId");
+
+                    b.HasIndex("GenreId");
+
                     b.ToTable("Books");
                 });
 
@@ -77,31 +82,27 @@ namespace Book_Store_Management_System_Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("BookModelId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BookModelId");
-
                     b.ToTable("Genres");
                 });
 
-            modelBuilder.Entity("Book_Store_Management_System_Data.Models.AuthorModel", b =>
+            modelBuilder.Entity("Book_Store_Management_System_Data.Models.BookModel", b =>
                 {
-                    b.HasOne("Book_Store_Management_System_Data.Models.BookModel", "Books")
-                        .WithMany("Authors")
-                        .HasForeignKey("BooksId");
-                });
+                    b.HasOne("Book_Store_Management_System_Data.Models.AuthorModel", "Author")
+                        .WithMany("Books")
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-            modelBuilder.Entity("Book_Store_Management_System_Data.Models.GenreModel", b =>
-                {
-                    b.HasOne("Book_Store_Management_System_Data.Models.BookModel", null)
-                        .WithMany("Genres")
-                        .HasForeignKey("BookModelId");
+                    b.HasOne("Book_Store_Management_System_Data.Models.GenreModel", "Genre")
+                        .WithMany("Books")
+                        .HasForeignKey("GenreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

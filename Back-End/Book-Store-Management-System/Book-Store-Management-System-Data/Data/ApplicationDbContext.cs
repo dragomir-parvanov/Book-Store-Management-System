@@ -5,12 +5,22 @@
     using System.Text;
     using Book_Store_Management_System_Data.Models;
     using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Logging;
+    using Microsoft.Extensions.Logging.Console;
 
     /// <summary>
     /// The context of the database.
     /// </summary>
-    public class ApplicationDbContext: DbContext
+    public class ApplicationDbContext : DbContext
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApplicationDbContext"/> class.
+        /// </summary>
+        /// <param name="options">The options.</param>
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+            : base(options)
+        { }
+
         /// <summary>
         /// Gets or sets the books in the database.
         /// </summary>
@@ -26,10 +36,6 @@
         /// </summary>
         public DbSet<GenreModel> Genres { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-        }
-
         /// <summary>
         /// Called when [configuring].
         /// </summary>
@@ -42,7 +48,13 @@
                 throw new ArgumentNullException(nameof(builder));
             }
 
-            builder.UseSqlServer(@"Server=DESKTOP-36GUPUH;Database=BookStoreManagementSystemTest;Integrated Security=True");
+            if (!builder.IsConfigured)
+            {
+                builder.UseSqlServer(@"Server=DESKTOP-36GUPUH;Database=BookStoreManagementSystemTest2;Integrated Security=True")
+                    .UseLazyLoadingProxies();
+            }
+
+            base.OnConfiguring(builder);
         }
     }
 }

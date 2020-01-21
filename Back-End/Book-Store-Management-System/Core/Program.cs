@@ -1,9 +1,11 @@
 ﻿using Book_Store_Management_System_Data.Data;
 using Book_Store_Management_System_Data.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace Core
 {
@@ -11,29 +13,34 @@ namespace Core
     {
         static void Main(string[] args)
         {
-            using var dbContext = new ApplicationDbContext();
-            var author = new AuthorModel
-            {
-                Name = "Drago4",
-            };
-            var authors = new List<AuthorModel>();
-            authors.Add(author);
-           
+            var options = new DbContextOptions<ApplicationDbContext>();
+            using var dbContext = new ApplicationDbContext(options);
+            var items = new List<BookModel>();
             var book = new BookModel
             {
-               
-                DateReleased = DateTime.Today,
-                Sales = 0,
-                SupplyPrice = 0,
-                Authors = authors,
-                Name = "Tales of Drago7",
-                Profit = 0,
-                RetailPrice = 0,
+                Author = new AuthorModel { Name = "bsd" }
             };
 
+            items.Add(book);
+            
+            Expression<Func<BookModel, bool>> expr1 = (b => b.Profit < 5);
 
-            dbContext.Add(book);
-            dbContext.SaveChanges();
+            Expression<Func<BookModel, bool>> expr2 = b => b.Profit>0 ;
+            
+           // Console.WriteLine(dbContext.Books.Where(b=> b.Profit<5 && b.Profit>0).ToList().Count);
+
+
+        }
+        private static Func<BookModel, bool> CombineFunc(Func<BookModel, bool> first, Func<BookModel, bool> second)
+        {
+            Func<BookModel, bool> combinedFunctions = (b => first(b) || second(b));
+
+
+            return combinedFunctions;
+        }
+        private static IQueryable<BookModel> CombineQueryable(IQueryable first, IQueryable second)
+        {
+            throw new NotImplementedException();
         }
     }
 }
