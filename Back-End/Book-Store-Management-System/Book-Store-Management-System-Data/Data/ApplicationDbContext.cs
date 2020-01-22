@@ -1,12 +1,8 @@
 ﻿namespace Book_Store_Management_System_Data.Data
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
     using Book_Store_Management_System_Models.Data;
     using Microsoft.EntityFrameworkCore;
-    using Microsoft.Extensions.Logging;
-    using Microsoft.Extensions.Logging.Console;
 
     /// <summary>
     /// The context of the database.

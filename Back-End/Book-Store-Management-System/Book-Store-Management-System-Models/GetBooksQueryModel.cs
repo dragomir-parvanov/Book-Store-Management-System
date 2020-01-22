@@ -5,10 +5,17 @@ using System.Threading.Tasks;
 
 namespace Book_Store_Management_System_Models
 {
+    /// <summary>
+    /// The url query that we get from the request.
+    /// </summary>
     public class GetBooksQueryModel
     {
 #nullable enable
         public string? QueryId { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the books ids that the the client have.
+        /// </summary>
         public string? Ids { get; set; }
 
         public string? GenresIds { get; set; }
