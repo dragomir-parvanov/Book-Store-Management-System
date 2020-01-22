@@ -4,8 +4,8 @@ import BookQueryModel from "../../Models/Networking/BookQueryModel";
 // generating queryId, so the server can keep track of which entities we already have.
 const queryId = generateGuid();
 
-function trueOrFalse(bool: boolean): string {
-  return bool ? "1" : "0";
+function trueOrFalse(bool: boolean): boolean {
+  return bool ? true : false;
 }
 
 /**
@@ -21,7 +21,7 @@ export default function buildQuery(query: BookQueryModel, limit: number): string
   parameters.push("limit=" + limit);
   // couldnt make for key in interface work in typescript like for key in object :(
   if (query.Authors && query.Authors.length > 0) {
-    parameters.push(encodeURIComponent("authors") + "=" + encodeURIComponent(query.Authors.join(",")));
+    parameters.push(encodeURIComponent("authorsIds  ") + "=" + encodeURIComponent(query.Authors.join(",")));
   }
 
   if (query.FromDate) {
