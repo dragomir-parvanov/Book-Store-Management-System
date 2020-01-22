@@ -2111,6 +2111,19 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Book-Store-Management-System-Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.7.0"
+        },
+        "compile": {
+          "bin/placeholder/Book-Store-Management-System-Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Book-Store-Management-System-Models.dll": {}
+        }
       }
     }
   },
@@ -7629,10 +7642,16 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Book-Store-Management-System-Models/1.0.0": {
+      "type": "project",
+      "path": "../Book-Store-Management-System-Models/Book-Store-Management-System-Models.csproj",
+      "msbuildProject": "../Book-Store-Management-System-Models/Book-Store-Management-System-Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
+      "Book-Store-Management-System-Models >= 1.0.0",
       "Microsoft.CodeAnalysis.FxCopAnalyzers >= 2.9.8",
       "Microsoft.EntityFrameworkCore >= 3.1.1",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.1",
@@ -7676,7 +7695,11 @@
       },
       "frameworks": {
         "netstandard2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Models\\Book-Store-Management-System-Models.csproj": {
+              "projectPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Models\\Book-Store-Management-System-Models.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

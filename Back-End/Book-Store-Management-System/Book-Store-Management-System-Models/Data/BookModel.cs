@@ -41,6 +41,9 @@
         public decimal Profit { get; set; }
 
         /// <inheritdoc/>
+        public decimal TotalProfit { get; set; }
+
+        /// <inheritdoc/>
         public int Sales { get; set; }
     }
 }

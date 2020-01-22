@@ -29,4 +29,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Book-Store-Management-System-Models\Book-Store-Management-System-Models.csproj" />
+  </ItemGroup>
+
 </Project>

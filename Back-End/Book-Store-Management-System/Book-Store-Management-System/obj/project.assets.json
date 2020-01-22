@@ -2681,6 +2681,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
+          "Book-Store-Management-System-Models": "1.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.1",
           "Microsoft.EntityFrameworkCore.Proxies": "3.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.1",

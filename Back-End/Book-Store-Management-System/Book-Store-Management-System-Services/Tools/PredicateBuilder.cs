@@ -21,12 +21,18 @@ namespace Book_Store_Management_System_Services.Tools
         /// <param name="b">The expression that is going to be chained</param>
         public static Expression<Func<T, bool>> And<T>(this Expression<Func<T, bool>> a, Expression<Func<T, bool>> b)
         {
+            // if the first expression that we are prototyping is null, return the second.
+            // We use this in GetBooksByQueryService.
+            if (a == null)
+            {
+                return b;
+            }
 
             ParameterExpression p = a.Parameters[0];
 
             SubstExpressionVisitor visitor = new SubstExpressionVisitor();
             visitor.subst[b.Parameters[0]] = p;
-            
+
             Expression body = Expression.AndAlso(a.Body, visitor.Visit(b.Body));
             return Expression.Lambda<Func<T, bool>>(body, p);
         }

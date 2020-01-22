@@ -8,6 +8,7 @@ namespace Book_Store_Management_System_Models
     public class GetBooksQueryModel
     {
 #nullable enable
+        public string? QueryId { get; set; }
         public string? Ids { get; set; }
 
         public string? GenresIds { get; set; }
@@ -35,7 +36,7 @@ namespace Book_Store_Management_System_Models
 
         public bool? SupplyPriceOrderByAscending { get; set; }
 
-        public bool? totalProfitOrderByAscending { get; set; }
+        public bool? TotalProfitOrderByAscending { get; set; }
 
     }
 }

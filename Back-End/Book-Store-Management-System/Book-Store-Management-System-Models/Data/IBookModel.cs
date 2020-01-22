@@ -46,10 +46,13 @@
         decimal Profit { get; set; }
 
         /// <summary>
+        /// Gets or sets the total profit we made from this book.
+        /// </summary>
+        decimal TotalProfit { get; set; }
+
+        /// <summary>
         /// Gets or sets total amount of sales.
         /// </summary>
         int Sales { get; set; }
-
-
     }
 }

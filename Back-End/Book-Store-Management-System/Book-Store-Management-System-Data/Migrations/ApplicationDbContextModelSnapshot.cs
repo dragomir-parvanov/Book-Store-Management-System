@@ -19,7 +19,7 @@ namespace Book_Store_Management_System_Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Book_Store_Management_System_Data.Models.AuthorModel", b =>
+            modelBuilder.Entity("Book_Store_Management_System_Models.Data.AuthorModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -27,14 +27,15 @@ namespace Book_Store_Management_System_Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(1000)")
+                        .HasMaxLength(1000);
 
                     b.HasKey("Id");
 
                     b.ToTable("Authors");
                 });
 
-            modelBuilder.Entity("Book_Store_Management_System_Data.Models.BookModel", b =>
+            modelBuilder.Entity("Book_Store_Management_System_Models.Data.BookModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -52,7 +53,8 @@ namespace Book_Store_Management_System_Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(1000)")
+                        .HasMaxLength(1000);
 
                     b.Property<decimal>("Profit")
                         .HasColumnType("decimal(18,2)");
@@ -66,6 +68,9 @@ namespace Book_Store_Management_System_Data.Migrations
                     b.Property<decimal>("SupplyPrice")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<decimal>("TotalProfit")
+                        .HasColumnType("decimal(18,2)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("AuthorId");
@@ -75,7 +80,7 @@ namespace Book_Store_Management_System_Data.Migrations
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("Book_Store_Management_System_Data.Models.GenreModel", b =>
+            modelBuilder.Entity("Book_Store_Management_System_Models.Data.GenreModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -83,23 +88,24 @@ namespace Book_Store_Management_System_Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(1000)")
+                        .HasMaxLength(1000);
 
                     b.HasKey("Id");
 
                     b.ToTable("Genres");
                 });
 
-            modelBuilder.Entity("Book_Store_Management_System_Data.Models.BookModel", b =>
+            modelBuilder.Entity("Book_Store_Management_System_Models.Data.BookModel", b =>
                 {
-                    b.HasOne("Book_Store_Management_System_Data.Models.AuthorModel", "Author")
-                        .WithMany("Books")
+                    b.HasOne("Book_Store_Management_System_Models.Data.AuthorModel", "Author")
+                        .WithMany()
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Book_Store_Management_System_Data.Models.GenreModel", "Genre")
-                        .WithMany("Books")
+                    b.HasOne("Book_Store_Management_System_Models.Data.GenreModel", "Genre")
+                        .WithMany()
                         .HasForeignKey("GenreId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

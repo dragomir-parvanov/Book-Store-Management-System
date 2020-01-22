@@ -5,8 +5,8 @@
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web;
-    using Book_Store_Management_System.Models;
-    using Book_Store_Management_System_Data.Models;
+    using Book_Store_Management_System_Models;
+    using Book_Store_Management_System_Models.Data;
     using Book_Store_Management_System_Services.Services;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
@@ -37,7 +37,8 @@
         [HttpGet]
         public async Task<ActionResult<IEnumerable<IBookModel>>> GetBooks([FromQuery]GetBooksQueryModel query)
         {
-            var books = await this.getBooksByQueryService.GetBooks(this.Request.Query).ConfigureAwait(false);
+            Console.WriteLine(query.ProfitOrderByAscending);
+            var books = await this.getBooksByQueryService.GetBooks(query).ConfigureAwait(false);
             return this.Ok(books);
         }
     }

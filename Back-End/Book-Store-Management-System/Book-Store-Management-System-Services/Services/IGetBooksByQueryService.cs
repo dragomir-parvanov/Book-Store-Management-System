@@ -2,7 +2,8 @@
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using Book_Store_Management_System_Data.Models;
+    using Book_Store_Management_System_Models;
+    using Book_Store_Management_System_Models.Data;
 
     /// <summary>
     /// A service for getting books from the database.

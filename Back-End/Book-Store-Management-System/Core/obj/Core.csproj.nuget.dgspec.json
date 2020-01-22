@@ -31,7 +31,11 @@
         },
         "frameworks": {
           "netstandard2.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Models\\Book-Store-Management-System-Models.csproj": {
+                "projectPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Models\\Book-Store-Management-System-Models.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
