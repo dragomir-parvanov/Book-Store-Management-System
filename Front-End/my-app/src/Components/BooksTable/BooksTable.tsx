@@ -1,9 +1,11 @@
 import React from "react";
-import { Table } from "react-bootstrap";
+import { Table, OverlayTrigger } from "react-bootstrap";
 import { renderOrAppend } from "../../Observables/booksObservable";
 import BookRow from "./SubComponents/BookRow";
 import { retailPriceOnClick, supplyPriceOnClick, totalProfitOnClick, salesOnClick, profitOnClick } from "../../Functions/sortings";
 import { getMoreBooks, subscribeToBookQuery } from "../../Networking/getBooks";
+import DatePopOver from "./SubComponents/PopOvers/DatePopOver";
+import "react-datepicker/dist/react-datepicker.css";
 
 type Props = {};
 
@@ -28,10 +30,14 @@ export default class BooksTable extends React.Component<Props, State> {
     });
   }
 
+  /**
+   * Starting to download the books.
+   * @memberof BooksTable
+   */
   componentDidMount(): void {
-    console.log("here");
     subscribeToBookQuery();
   }
+
   state: State = {
     rows: []
   };
@@ -43,7 +49,9 @@ export default class BooksTable extends React.Component<Props, State> {
           <tr>
             <th>Name</th>
             <th>Authors</th>
-            <th>Date released</th>
+            <OverlayTrigger trigger="click" placement="bottom" key="authors-overlay-trigger" overlay={<DatePopOver></DatePopOver>}>
+              <th>Date released</th>
+            </OverlayTrigger>
             <th>Genre</th>
             <th onClick={retailPriceOnClick}>Retail price</th>
             <th onClick={supplyPriceOnClick}>Supply price</th>

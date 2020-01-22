@@ -58,5 +58,7 @@ export default function buildQuery(query: BookQueryModel, limit: number): string
     parameters.push("totalProfitOrderByAscending=" + trueOrFalse(query.TotalProfitOrderByAscending));
   }
 
+  console.log(parameters.join("&"));
+
   return parameters.join("&");
 }
