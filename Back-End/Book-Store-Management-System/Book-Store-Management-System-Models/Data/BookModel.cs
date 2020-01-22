@@ -1,6 +1,6 @@
-﻿namespace Book_Store_Management_System_Data.Models
+﻿namespace Book_Store_Management_System_Models.Data
 {
-    using Newtonsoft.Json;
+    using Book_Store_Management_System_Models.Data.Constants;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -25,6 +25,7 @@
 
         /// <inheritdoc/>
         [Required]
+        [MaxLength(DataMaxLengthConstants.Name)]
         public string Name { get; set; }
 
         /// <inheritdoc/>

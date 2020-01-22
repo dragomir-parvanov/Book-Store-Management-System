@@ -5,8 +5,8 @@
     using System.Linq;
     using System.Linq.Expressions;
     using System.Threading.Tasks;
+    using Book_Store_Management_System.Models;
     using Book_Store_Management_System_Data.Data;
-    using Book_Store_Management_System_Data.Models;
     using Book_Store_Management_System_Services.Tools;
     using Microsoft.EntityFrameworkCore;
 
@@ -24,7 +24,7 @@
         }
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<IBookModel>> GetBooks( query)
+        public async Task<IEnumerable<IBookModel>> GetBooks(GetBooksQueryModel query)
         {
             if (query == null)
             {

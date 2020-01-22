@@ -2675,11 +2675,25 @@
           "bin/placeholder/Book-Store-Management-System-Data.dll": {}
         }
       },
+      "Book-Store-Management-System-Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.7.0"
+        },
+        "compile": {
+          "bin/placeholder/Book-Store-Management-System-Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Book-Store-Management-System-Models.dll": {}
+        }
+      },
       "Book-Store-Management-System-Services/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "Book-Store-Management-System-Data": "1.0.0",
+          "Book-Store-Management-System-Models": "1.0.0",
           "System.Collections": "4.3.0",
           "System.Linq.Expressions": "4.3.0"
         },
@@ -8605,6 +8619,11 @@
       "path": "../Book-Store-Management-System-Data/Book-Store-Management-System-Data.csproj",
       "msbuildProject": "../Book-Store-Management-System-Data/Book-Store-Management-System-Data.csproj"
     },
+    "Book-Store-Management-System-Models/1.0.0": {
+      "type": "project",
+      "path": "../Book-Store-Management-System-Models/Book-Store-Management-System-Models.csproj",
+      "msbuildProject": "../Book-Store-Management-System-Models/Book-Store-Management-System-Models.csproj"
+    },
     "Book-Store-Management-System-Services/1.0.0": {
       "type": "project",
       "path": "../Book-Store-Management-System-Services/Book-Store-Management-System-Services.csproj",
@@ -8615,6 +8634,7 @@
     ".NETCoreApp,Version=v3.1": [
       "Book-Store-Management-System >= 1.0.0",
       "Book-Store-Management-System-Data >= 1.0.0",
+      "Book-Store-Management-System-Models >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.1",
       "System.Linq.Expressions >= 4.3.0"
     ]
@@ -8654,6 +8674,9 @@
           "projectReferences": {
             "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Data\\Book-Store-Management-System-Data.csproj": {
               "projectPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Data\\Book-Store-Management-System-Data.csproj"
+            },
+            "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Models\\Book-Store-Management-System-Models.csproj": {
+              "projectPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Models\\Book-Store-Management-System-Models.csproj"
             },
             "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System\\Book-Store-Management-System.csproj": {
               "projectPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System\\Book-Store-Management-System.csproj"

@@ -1,19 +1,17 @@
-﻿namespace Book_Store_Management_System_Data.Models
+﻿namespace Book_Store_Management_System_Models.Data
 {
-    using System.Collections.Generic;
+    using Book_Store_Management_System_Models.Data.Constants;
     using System.ComponentModel.DataAnnotations;
-    using System.Runtime.Serialization;
 
     /// <inheritdoc/>
-    [DataContract]
     public class AuthorModel : IAuthorModel
     {
         /// <inheritdoc/>
-        [DataMember]
+        [Key]
         public int Id { get; set; }
 
         /// <inheritdoc/>
-        [DataMember]
+        [MaxLength(DataMaxLengthConstants.Name)]
         public string Name { get; set; }
     }
 }

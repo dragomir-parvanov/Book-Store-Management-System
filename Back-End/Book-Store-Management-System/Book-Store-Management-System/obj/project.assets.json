@@ -2694,11 +2694,25 @@
           "bin/placeholder/Book-Store-Management-System-Data.dll": {}
         }
       },
+      "Book-Store-Management-System-Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.7.0"
+        },
+        "compile": {
+          "bin/placeholder/Book-Store-Management-System-Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Book-Store-Management-System-Models.dll": {}
+        }
+      },
       "Book-Store-Management-System-Services/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "Book-Store-Management-System-Data": "1.0.0",
+          "Book-Store-Management-System-Models": "1.0.0",
           "System.Collections": "4.3.0",
           "System.Linq.Expressions": "4.3.0"
         },
@@ -9036,6 +9050,11 @@
       "type": "project",
       "path": "../Book-Store-Management-System-Data/Book-Store-Management-System-Data.csproj",
       "msbuildProject": "../Book-Store-Management-System-Data/Book-Store-Management-System-Data.csproj"
+    },
+    "Book-Store-Management-System-Models/1.0.0": {
+      "type": "project",
+      "path": "../Book-Store-Management-System-Models/Book-Store-Management-System-Models.csproj",
+      "msbuildProject": "../Book-Store-Management-System-Models/Book-Store-Management-System-Models.csproj"
     },
     "Book-Store-Management-System-Services/1.0.0": {
       "type": "project",

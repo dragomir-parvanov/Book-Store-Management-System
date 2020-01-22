@@ -1,4 +1,4 @@
-﻿namespace Book_Store_Management_System_Data.Models
+﻿namespace Book_Store_Management_System_Models.Data
 {
     using System;
     using System.Collections.Generic;

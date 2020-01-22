@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Book_Store_Management_System.Models
+namespace Book_Store_Management_System_Models
 {
     public class GetBooksQueryModel
     {
