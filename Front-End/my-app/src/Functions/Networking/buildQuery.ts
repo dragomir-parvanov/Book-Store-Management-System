@@ -12,13 +12,13 @@ function trueOrFalse(bool: boolean): string {
  * Building an url query.
  * @export
  * @param {BookQueryModel} query th book query that will be passed to the server.
- * @param {number} count of books to be downloaded
- * @returns {string}
+ * @param {number} limit count of the books to be downloaded
+ * @returns {string} the book query in url variant.
  */
-export default function buildQuery(query: BookQueryModel, count: number): string {
+export default function buildQuery(query: BookQueryModel, limit: number): string {
   let parameters: string[] = ["?queryId:" + encodeURIComponent(queryId)];
 
-  parameters.push("count=" + count);
+  parameters.push("limit=" + limit);
   // couldnt make for key in interface work in typescript like for key in object :(
   if (query.Authors && query.Authors.length > 0) {
     parameters.push(encodeURIComponent("authors") + "=" + encodeURIComponent(query.Authors.join(",")));
@@ -35,7 +35,7 @@ export default function buildQuery(query: BookQueryModel, count: number): string
   }
 
   if (query.Genres && query.Genres.length > 0) {
-    parameters.push("genres=" + encodeURIComponent(query.Genres.join(",")));
+    parameters.push("genresIds=" + encodeURIComponent(query.Genres.join(",")));
   }
 
   if (query.ProfitOrderByAscending !== undefined) {

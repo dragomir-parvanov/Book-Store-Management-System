@@ -5,11 +5,15 @@
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web;
+    using Book_Store_Management_System.Models;
     using Book_Store_Management_System_Data.Models;
     using Book_Store_Management_System_Services.Services;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
 
+    /// <summary>
+    /// Controller for getting books.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class GetBooksController : ControllerBase
@@ -21,15 +25,19 @@
         /// </summary>
         public GetBooksController(IGetBooksByQueryService getBooksByQueryService)
         {
-            this.getBooksByQueryService = getBooksByQueryService 
+            this.getBooksByQueryService = getBooksByQueryService
                 ?? throw new ArgumentNullException(nameof(getBooksByQueryService));
         }
 
-        // GET: api/GetBooks/5
+        /// <summary>
+        /// Getting books from the database.
+        /// usage: api/books/?query .
+        /// </summary>
+        /// <returns>Books json.</returns>
         [HttpGet]
-        public ActionResult<IEnumerable<IBookModel>> GetBooks(int id)
+        public async Task<ActionResult<IEnumerable<IBookModel>>> GetBooks([FromQuery]GetBooksQueryModel query)
         {
-            var books = this.getBooksByQueryService.GetBooks(this.Request.Query);
+            var books = await this.getBooksByQueryService.GetBooks(this.Request.Query).ConfigureAwait(false);
             return this.Ok(books);
         }
     }

@@ -13,10 +13,5 @@ namespace Book_Store_Management_System_Data.Models
         /// Gets or sets the name of the author.
         /// </summary>
         string Name { get; set; }
-
-        /// <summary>
-        /// Gets or sets navigation property.
-        /// </summary>
-        ICollection<BookModel> Books { get; set; }
     }
 }

@@ -15,8 +15,5 @@
         /// <inheritdoc/>
         [DataMember]
         public string Name { get; set; }
-
-        /// <inheritdoc/>
-        public ICollection<BookModel> Books { get; set; }
     }
 }

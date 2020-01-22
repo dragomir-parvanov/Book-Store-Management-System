@@ -24,12 +24,14 @@ namespace Book_Store_Management_System
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        /// Called by runtime, used for configuring services.
+        /// </summary>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
             services.AddDbContext<ApplicationDbContext>(options =>
-             options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"));
+             options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped(typeof(IGetBooksByQueryService), typeof(GetBooksByQueryService));
         }
@@ -41,6 +43,7 @@ namespace Book_Store_Management_System
             {
                 app.UseDeveloperExceptionPage();
             }
+
             app.UseStaticFiles();
             app.UseHttpsRedirection();
 

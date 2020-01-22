@@ -6,7 +6,7 @@
 
     /// <inheritdoc/>
     [DataContract]
-    public class GenreModel : IIdentifiable
+    public class GenreModel : IGenreModel
     {
         /// <inheritdoc/>
         [Key]
@@ -18,10 +18,5 @@
         /// </summary>
         [DataMember]
         public string Name { get; set; }
-
-        /// <summary>
-        /// The books that belongs to that genre.
-        /// </summary>
-        public ICollection<BookModel> Books { get; set; }
     }
 }

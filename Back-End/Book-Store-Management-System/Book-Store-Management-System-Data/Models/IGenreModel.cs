@@ -14,10 +14,5 @@
         /// Gets or sets the name of the genre.
         /// </summary>
         string Name { get; set; }
-
-        /// <summary>
-        /// The navigation property.
-        /// </summary>
-        ICollection<BookModel> Books { get; set; }
     }
 }
