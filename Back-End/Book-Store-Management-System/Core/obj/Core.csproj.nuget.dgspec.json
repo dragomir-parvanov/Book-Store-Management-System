@@ -1,0 +1,445 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Core\\Core.csproj": {}
+  },
+  "projects": {
+    "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Data\\Book-Store-Management-System-Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Data\\Book-Store-Management-System-Data.csproj",
+        "projectName": "Book-Store-Management-System-Data",
+        "projectPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Data\\Book-Store-Management-System-Data.csproj",
+        "packagesPath": "C:\\Users\\Drago\\.nuget\\packages\\",
+        "outputPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Drago\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {
+              "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Models\\Book-Store-Management-System-Models.csproj": {
+                "projectPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Models\\Book-Store-Management-System-Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "Microsoft.CodeAnalysis.FxCopAnalyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.9.8, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.Extensions.Logging.Console": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Models\\Book-Store-Management-System-Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Models\\Book-Store-Management-System-Models.csproj",
+        "projectName": "Book-Store-Management-System-Models",
+        "projectPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Models\\Book-Store-Management-System-Models.csproj",
+        "packagesPath": "C:\\Users\\Drago\\.nuget\\packages\\",
+        "outputPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Drago\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Services\\Book-Store-Management-System-Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Services\\Book-Store-Management-System-Services.csproj",
+        "projectName": "Book-Store-Management-System-Services",
+        "projectPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Services\\Book-Store-Management-System-Services.csproj",
+        "packagesPath": "C:\\Users\\Drago\\.nuget\\packages\\",
+        "outputPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Drago\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {
+              "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Data\\Book-Store-Management-System-Data.csproj": {
+                "projectPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Data\\Book-Store-Management-System-Data.csproj"
+              },
+              "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Models\\Book-Store-Management-System-Models.csproj": {
+                "projectPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Models\\Book-Store-Management-System-Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "Microsoft.CodeAnalysis.FxCopAnalyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.9.8, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )"
+            },
+            "System.Collections": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Linq.Expressions": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System\\Book-Store-Management-System.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System\\Book-Store-Management-System.csproj",
+        "projectName": "Book-Store-Management-System",
+        "projectPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System\\Book-Store-Management-System.csproj",
+        "packagesPath": "C:\\Users\\Drago\\.nuget\\packages\\",
+        "outputPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Drago\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Data\\Book-Store-Management-System-Data.csproj": {
+                "projectPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Data\\Book-Store-Management-System-Data.csproj"
+              },
+              "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Services\\Book-Store-Management-System-Services.csproj": {
+                "projectPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Services\\Book-Store-Management-System-Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.CodeAnalysis.FxCopAnalyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.9.8, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Core\\Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Core\\Core.csproj",
+        "projectName": "Core",
+        "projectPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\Drago\\.nuget\\packages\\",
+        "outputPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Drago\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Data\\Book-Store-Management-System-Data.csproj": {
+                "projectPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Data\\Book-Store-Management-System-Data.csproj"
+              },
+              "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Models\\Book-Store-Management-System-Models.csproj": {
+                "projectPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System-Models\\Book-Store-Management-System-Models.csproj"
+              },
+              "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System\\Book-Store-Management-System.csproj": {
+                "projectPath": "E:\\Desktop\\Book-Store-Management-System\\Back-End\\Book-Store-Management-System\\Book-Store-Management-System\\Book-Store-Management-System.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "System.Linq.Expressions": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
