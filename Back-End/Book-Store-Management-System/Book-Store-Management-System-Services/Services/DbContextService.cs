@@ -1,10 +1,8 @@
-﻿using Book_Store_Management_System_Data.Data;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Book_Store_Management_System_Services.Services
+﻿namespace Book_Store_Management_System_Services.Services
 {
+    using System;
+    using Book_Store_Management_System_Data.Data;
+
     /// <summary>
     /// All services which have access to the database context.
     /// </summary>

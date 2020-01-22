@@ -18,7 +18,7 @@
         /// Initializes a new instance of the <see cref="GetBooksByQueryService"/> class.
         /// Used for dependency injection.
         /// </summary>
-        /// <param name="dbContext">dependency injection of dbContext.</param>
+        /// <param name="dbContext">dependency injection for dbContext.</param>
         public GetBooksByQueryService(ApplicationDbContext dbContext)
             : base(dbContext)
         {
@@ -32,66 +32,29 @@
                 throw new ArgumentNullException(nameof(query));
             }
 
+            IQueryable<BookModel> sqlQuery = this.DbContext.Books;
+
             var whereExpression = BuildWhereExpression(query);
-            var sqlQuery = this.DbContext.Books.Where(whereExpression);
-            var books = await this.DbContext.Books.Where(whereExpression).Include(b => b.Author)
-                .Include(b => b.Genre).Take(10).AsNoTracking().ToListAsync().ConfigureAwait(false);
+            if (whereExpression != null)
+            {
+                sqlQuery = sqlQuery.Where(whereExpression);
+            }
+
+            sqlQuery = ApplySortings(sqlQuery, query);
+
+            var limit = query.Limit ?? 10;
+
+            var books = await sqlQuery.Include(b => b.Author)
+                .Include(b => b.Genre).Take(limit).AsNoTracking()
+                .ToListAsync().ConfigureAwait(false);
             return books;
         }
 
-        private static IQueryable<BookModel> ApplySortings(IQueryable<BookModel> sqlQuery, GetBooksQueryModel query)
-        {
-            if (query.ProfitOrderByAscending != null)
-            {
-                if (query.ProfitOrderByAscending == true)
-                {
-                    return sqlQuery.OrderBy(b => b.Profit);
-                }
-                else
-                {
-                    return sqlQuery.OrderByDescending(b => b.Profit);
-                }
-            }
-
-            if (query.RetailPriceOrderByAscending != null)
-            {
-                if (query.RetailPriceOrderByAscending == true)
-                {
-                    return sqlQuery.OrderBy(b => b.RetailPrice);
-                }
-                else
-                {
-                    return sqlQuery.OrderByDescending(b => b.RetailPrice);
-                }
-            }
-
-            if (query.SupplyPriceOrderByAscending != null)
-            {
-                if (query.SupplyPriceOrderByAscending == true)
-                {
-                    return sqlQuery.OrderBy(b => b.SupplyPrice);
-                }
-                else
-                {
-                    return sqlQuery.OrderByDescending(b => b.SupplyPrice);
-                }
-            }
-
-            if (query.TotalProfitOrderByAscending != null)
-            {
-                if (query.TotalProfitOrderByAscending == true)
-                {
-                    return sqlQuery.OrderBy(b => b.SupplyPrice);
-                }
-                else
-                {
-                    return sqlQuery.OrderByDescending(b => b.SupplyPrice);
-                }
-            }
-            // no sortings applied.
-            return sqlQuery;
-        }
-
+        /// <summary>
+        /// Building the where expression.
+        /// </summary>
+        /// <param name="query">The url query.</param>
+        /// <returns>An expression which is safe for Entity framework to evaluate.</returns>
         private static Expression<Func<BookModel, bool>> BuildWhereExpression(GetBooksQueryModel query)
         {
             Expression<Func<BookModel, bool>> whereExpression = null;
@@ -135,6 +98,66 @@
             }
 
             return whereExpression;
+        }
+
+        /// <summary>
+        /// Applying any sortings from the url query.
+        /// </summary>
+        /// <param name="sqlQuery">The sql query.</param>
+        /// <param name="query">The url query.</param>
+        /// <returns>An query where sortings are applied.</returns>
+        private static IQueryable<BookModel> ApplySortings(IQueryable<BookModel> sqlQuery, GetBooksQueryModel query)
+        {
+            if (query.ProfitOrderByAscending != null)
+            {
+                if (query.ProfitOrderByAscending == true)
+                {
+                    return sqlQuery.OrderBy(b => b.Profit);
+                }
+                else
+                {
+                    return sqlQuery.OrderByDescending(b => b.Profit);
+                }
+            }
+
+            if (query.RetailPriceOrderByAscending != null)
+            {
+                if (query.RetailPriceOrderByAscending == true)
+                {
+                    return sqlQuery.OrderBy(b => b.RetailPrice);
+                }
+                else
+                {
+                    return sqlQuery.OrderByDescending(b => b.RetailPrice);
+                }
+            }
+
+            if (query.SupplyPriceOrderByAscending != null)
+            {
+                if (query.SupplyPriceOrderByAscending == true)
+                {
+                    return sqlQuery.OrderBy(b => b.SupplyPrice);
+                }
+                else
+                {
+                    return sqlQuery.OrderByDescending(b => b.SupplyPrice);
+                }
+            }
+
+            if (query.TotalProfitOrderByAscending != null)
+            {
+                if (query.TotalProfitOrderByAscending == true)
+                {
+                    return sqlQuery.OrderBy(b => b.TotalProfit);
+                }
+                else
+                {
+                    return sqlQuery.OrderByDescending(b => b.TotalProfit);
+                }
+            }
+
+            // no sortings were applied.
+            return sqlQuery;
         }
     }
 }
