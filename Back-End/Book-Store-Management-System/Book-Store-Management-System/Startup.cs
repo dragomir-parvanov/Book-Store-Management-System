@@ -29,8 +29,7 @@ namespace Book_Store_Management_System
         {
             services.AddControllers();
             services.AddDbContext<ApplicationDbContext>(options =>
-             options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"))
-                    .UseLazyLoadingProxies());
+             options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"));
 
             services.AddScoped(typeof(IGetBooksByQueryService), typeof(GetBooksByQueryService));
         }

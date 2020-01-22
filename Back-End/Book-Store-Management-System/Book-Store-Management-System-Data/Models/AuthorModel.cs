@@ -17,6 +17,6 @@
         public string Name { get; set; }
 
         /// <inheritdoc/>
-        public virtual ICollection<BookModel> Books { get; set; }
+        public ICollection<BookModel> Books { get; set; }
     }
 }

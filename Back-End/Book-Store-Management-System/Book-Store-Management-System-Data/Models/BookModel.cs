@@ -17,11 +17,11 @@
 
         /// <inheritdoc/>
         [Required]
-        public virtual AuthorModel Author { get; set; }
+        public AuthorModel Author { get; set; }
 
         /// <inheritdoc/>
         [Required]
-        public virtual GenreModel Genre { get; set; }
+        public GenreModel Genre { get; set; }
 
         /// <inheritdoc/>
         [Required]

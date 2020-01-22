@@ -22,6 +22,6 @@
         /// <summary>
         /// The books that belongs to that genre.
         /// </summary>
-        public virtual ICollection<BookModel> Books { get; set; }
+        public ICollection<BookModel> Books { get; set; }
     }
 }

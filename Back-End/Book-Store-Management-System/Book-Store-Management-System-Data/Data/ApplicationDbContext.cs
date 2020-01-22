@@ -50,8 +50,7 @@
 
             if (!builder.IsConfigured)
             {
-                builder.UseSqlServer(@"Server=DESKTOP-36GUPUH;Database=BookStoreManagementSystemTest2;Integrated Security=True")
-                    .UseLazyLoadingProxies();
+                builder.UseSqlServer(@"Server=DESKTOP-36GUPUH;Database=BookStoreManagementSystemTest2;Integrated Security=True");
             }
 
             base.OnConfiguring(builder);
