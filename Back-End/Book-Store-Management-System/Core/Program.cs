@@ -12,34 +12,7 @@ namespace Core
     {
         static void Main(string[] args)
         {
-            var options = new DbContextOptions<ApplicationDbContext>();
-            using var dbContext = new ApplicationDbContext(options);
-            var items = new List<BookModel>();
-            var book = new BookModel
-            {
-                Author = new AuthorModel { Name = "bsd" }
-            };
-
-            items.Add(book);
-            
-            Expression<Func<BookModel, bool>> expr1 = (b => b.Profit < 5);
-
-            Expression<Func<BookModel, bool>> expr2 = b => b.Profit>0 ;
-            
-           // Console.WriteLine(dbContext.Books.Where(b=> b.Profit<5 && b.Profit>0).ToList().Count);
-
-
-        }
-        private static Func<BookModel, bool> CombineFunc(Func<BookModel, bool> first, Func<BookModel, bool> second)
-        {
-            Func<BookModel, bool> combinedFunctions = (b => first(b) || second(b));
-
-
-            return combinedFunctions;
-        }
-        private static IQueryable<BookModel> CombineQueryable(IQueryable first, IQueryable second)
-        {
-            throw new NotImplementedException();
+            PopulateDatabase.Populate();
         }
     }
 }

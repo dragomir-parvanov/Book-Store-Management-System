@@ -19,7 +19,7 @@ export default class AuthorsPopOver extends React.Component {
    */
   render(): JSX.Element {
     const searchAuthorsPopover = (
-      <Popover {...this.props} id="authors-popover-implementation">
+      <Popover {...this.props} id="authors-popover-implementation-search">
         <Popover.Title as="h3">
           <Col>Search for authors</Col>
         </Popover.Title>
@@ -31,8 +31,8 @@ export default class AuthorsPopOver extends React.Component {
       </Popover>
     );
     return (
-      <Popover {...this.props} id="authors-popover-implementation">
-        <OverlayTrigger trigger="click" placement="right" key="authors-overlay-trigger" overlay={searchAuthorsPopover}>
+      <Popover {...this.props} id="authors-popover-implementation-current">
+        <OverlayTrigger trigger="click" placement="right" key="authors-current-overlay-trigger" overlay={searchAuthorsPopover}>
           <Popover.Title as="h3">
             <Col>Current authors</Col>
           </Popover.Title>
