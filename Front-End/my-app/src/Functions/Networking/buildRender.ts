@@ -4,6 +4,7 @@ import { downloadedBooks } from "../../Observables/booksObservable";
 
 /**
  * Builds a render of a BookModel[] the way it should be represented in the table.
+ * This will prevent a single book to be downloaded twice.
  * @export
  * @param {ServerResponseModel} serverResponse
  * @returns {BookModel[]}

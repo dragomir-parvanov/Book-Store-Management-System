@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { getMoreBooks } from "./Networking/getBooks";
-import PendingRequest from "./Networking/pendingRequest";
+import PendingRequest from "./Networking/PendingRequest";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 

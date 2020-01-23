@@ -3,9 +3,10 @@ import { Table, OverlayTrigger } from "react-bootstrap";
 import { renderOrAppend } from "../../Observables/booksObservable";
 import BookRow from "./SubComponents/BookRow";
 import { retailPriceOnClick, supplyPriceOnClick, totalProfitOnClick, salesOnClick, profitOnClick } from "../../Functions/sortings";
-import { getMoreBooks, subscribeToBookQuery } from "../../Networking/getBooks";
+import { subscribeToBookQuery } from "../../Networking/getBooks";
 import DatePopOver from "./SubComponents/PopOvers/DatePopOver";
 import "react-datepicker/dist/react-datepicker.css";
+import AuthorsPopOver from "./SubComponents/PopOvers/AuthorsPopOver";
 
 type Props = {};
 
@@ -48,7 +49,9 @@ export default class BooksTable extends React.Component<Props, State> {
         <thead>
           <tr>
             <th>Name</th>
-            <th>Authors</th>
+            <OverlayTrigger trigger="click" placement="bottom" key="authors-overlay-trigger" overlay={<AuthorsPopOver></AuthorsPopOver>}>
+              <th>Authors</th>
+            </OverlayTrigger>
             <OverlayTrigger trigger="click" placement="bottom" key="authors-overlay-trigger" overlay={<DatePopOver></DatePopOver>}>
               <th>Date released</th>
             </OverlayTrigger>

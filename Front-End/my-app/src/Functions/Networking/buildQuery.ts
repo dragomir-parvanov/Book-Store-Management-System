@@ -1,5 +1,6 @@
 import generateGuid from "../generateGuid";
 import BookQueryModel from "../../Models/Networking/BookQueryModel";
+import { downloadedBooks } from "../../Observables/booksObservable";
 
 // generating queryId, so the server can keep track of which entities we already have.
 const queryId = generateGuid();
@@ -13,15 +14,21 @@ function trueOrFalse(bool: boolean): boolean {
  * @export
  * @param {BookQueryModel} query th book query that will be passed to the server.
  * @param {number} limit count of the books to be downloaded
+ * @param {boolean} shouldReRender TODO: remove this and implement buildRender in both server and client.
  * @returns {string} the book query in url variant.
  */
-export default function buildQuery(query: BookQueryModel, limit: number): string {
+export default function buildQuery(query: BookQueryModel, limit: number, shouldReRender: boolean): string {
   let parameters: string[] = ["?queryId:" + encodeURIComponent(queryId)];
 
   parameters.push("limit=" + limit);
   // couldnt make for key in interface work in typescript like for key in object :(
   if (query.Authors && query.Authors.length > 0) {
-    parameters.push(encodeURIComponent("authorsIds  ") + "=" + encodeURIComponent(query.Authors.join(",")));
+    parameters.push(encodeURIComponent("authorsIds") + "=" + encodeURIComponent(query.Authors.join(",")));
+  }
+  if (!shouldReRender) {
+    parameters.push(encodeURIComponent("ids") + "=" + encodeURIComponent(downloadedBooks.map(b => b.Id).join(",")));
+  } else {
+    downloadedBooks.length = 0; //TODO: remove this and implement buildRender in both server and client.
   }
 
   if (query.FromDate) {
