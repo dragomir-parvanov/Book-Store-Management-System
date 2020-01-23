@@ -1,8 +1,22 @@
-import Authors from "../Book/Authors";
-import Genres from "../Book/Genres";
+import Author from "../Book/Author";
+import Genre from "../Book/Genre";
 import DateQueryModel from "../Networking/DateQueryModel";
 
-export default interface BookQueryModel extends Authors, Genres {
+export default interface BookQueryModel {
+  /**
+   * We should look for books only from these authors.
+   * @type {Author[]}
+   * @memberof BookQueryModel
+   */
+  Authors?: Author[];
+
+  /**
+   * We should look for books only from these genres.
+   * @type {Genre[]}
+   * @memberof BookQueryModel
+   */
+  Genres?: Genre[];
+
   /**
    *If we should order the entities by ascending retail price
    * @type {boolean}

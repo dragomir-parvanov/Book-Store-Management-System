@@ -1,6 +1,6 @@
 import Identifiable from "../Identifiable";
-import Authors from "./Authors";
-import Genres from "./Genres";
+import Author from "./Author";
+import Genre from "./Genre";
 
 /**
  * A book model, usually this comes from the API.
@@ -8,10 +8,10 @@ import Genres from "./Genres";
  * @export
  * @interface BookModel
  */
-export default interface BookModel extends Identifiable, Authors, Genres {
-  Authors: string[];
+export default interface BookModel extends Identifiable {
+  Author: Author;
 
-  Genres: string[];
+  Genre: Genre;
 
   /**
    *The book name.

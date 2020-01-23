@@ -2,29 +2,27 @@ import currentBookQuery from "../Observables/currentBookQueryObservable";
 import Axios from "axios";
 import buildQuery from "../Functions/Networking/buildQuery";
 import { renderOrAppend, downloadedBooks } from "../Observables/booksObservable";
-import { skip } from "rxjs/operators";
-import { ServerResponseModel } from "../Models/Networking/ServerResponseModel";
-import { buildRender } from "../Functions/Networking/buildRender";
 import StartingNumberOfEntitiesInTableConstant from "../Constants/StartingNumberOfEntitiesInTableConstant";
 import EntitiesAfterBottomScrollConstant from "../Constants/EntitiesAfterBottomScrollConstant";
-import PendingRequest from "./pendingRequest";
+import PendingRequest from "./PendingRequest";
+import BookModel from "../Models/Book/BookModel";
 
 /**
  * Subscribing to the book query, so it will send a new request on a new query.
  * @export
  */
 export function subscribeToBookQuery(): void {
-  currentBookQuery.pipe(skip(1)).subscribe({
+  currentBookQuery.pipe().subscribe({
     next: query => {
-      Axios.get<ServerResponseModel>("/" + buildQuery(query, StartingNumberOfEntitiesInTableConstant))
+      Axios.get<BookModel[]>("https://localhost:5001/api/getbooks/" + buildQuery(query, StartingNumberOfEntitiesInTableConstant, true))
         .then(r => {
           console.log("sending request to the server with query:\n" + JSON.stringify(query));
-          // eslint-disable-next-line no-constant-condition
-          if (true) {
-            return;
-          }
-          downloadedBooks.push(...r.data.inBetween.map(e => e.book));
-          const books = buildRender(r.data);
+
+          const books = r.data;
+          //downloadedBooks.push(...r.data.inBetween.map(e => e.book));
+          //const books = buildRender(r.data);
+
+          downloadedBooks.push(...books);
           renderOrAppend.next({
             value: true,
             Books: books
@@ -41,14 +39,13 @@ export function subscribeToBookQuery(): void {
  */
 export function getMoreBooks(): void {
   PendingRequest.isPending = true;
-  Axios.get<ServerResponseModel>("/" + buildQuery(currentBookQuery.getValue(), EntitiesAfterBottomScrollConstant))
+  Axios.get<BookModel[]>("https://localhost:5001/api/getbooks/" + buildQuery(currentBookQuery.getValue(), EntitiesAfterBottomScrollConstant, false))
     .then(r => {
-      // eslint-disable-next-line no-constant-condition
-      if (true) {
-        return;
-      }
-      downloadedBooks.push(...r.data.inBetween.map(e => e.book));
-      const books = buildRender(r.data);
+      //downloadedBooks.push(...r.data.inBetween.map(e => e.book));
+      // const books = buildRender(r.data);
+
+      const books = r.data;
+      downloadedBooks.push(...books);
       renderOrAppend.next({
         value: false,
         Books: [...books]
