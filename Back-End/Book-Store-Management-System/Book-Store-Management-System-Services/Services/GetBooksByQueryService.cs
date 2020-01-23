@@ -59,6 +59,13 @@
         {
             Expression<Func<BookModel, bool>> whereExpression = null;
 
+            if (!string.IsNullOrEmpty(query.Ids))
+            {
+                var bookIds = query.Ids.Split(",").Select(id => int.Parse(id));
+                Expression<Func<BookModel, bool>> excludeBooksExpresion = b => !bookIds.Contains(b.Id);
+                whereExpression = whereExpression.And(excludeBooksExpresion);
+            }
+
             if (!string.IsNullOrWhiteSpace(query.AuthorsIds))
             {
                 var authorsIds = query.AuthorsIds.Split(',').Select(id => int.Parse(id));
@@ -153,6 +160,18 @@
                 else
                 {
                     return sqlQuery.OrderByDescending(b => b.TotalProfit);
+                }
+            }
+
+            if (query.SalesOrderByAscending != null)
+            {
+                if (query.SalesOrderByAscending == true)
+                {
+                    return sqlQuery.OrderBy(b => b.Sales);
+                }
+                else
+                {
+                    return sqlQuery.OrderByDescending(b => b.Sales);
                 }
             }
 

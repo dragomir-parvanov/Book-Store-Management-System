@@ -6,6 +6,7 @@ import StartingNumberOfEntitiesInTableConstant from "../Constants/StartingNumber
 import EntitiesAfterBottomScrollConstant from "../Constants/EntitiesAfterBottomScrollConstant";
 import PendingRequest from "./PendingRequest";
 import BookModel from "../Models/Book/BookModel";
+import { skip, take } from "rxjs/operators";
 
 /**
  * Subscribing to the book query, so it will send a new request on a new query.
@@ -16,8 +17,6 @@ export function subscribeToBookQuery(): void {
     next: query => {
       Axios.get<BookModel[]>("https://localhost:5001/api/getbooks/" + buildQuery(query, StartingNumberOfEntitiesInTableConstant, true))
         .then(r => {
-          console.log("sending request to the server with query:\n" + JSON.stringify(query));
-
           const books = r.data;
           //downloadedBooks.push(...r.data.inBetween.map(e => e.book));
           //const books = buildRender(r.data);

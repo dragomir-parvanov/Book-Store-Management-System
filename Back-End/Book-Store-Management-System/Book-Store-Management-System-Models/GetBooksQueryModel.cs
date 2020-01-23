@@ -41,6 +41,8 @@ namespace Book_Store_Management_System_Models
 
         public bool? RetailPriceOrderByAscending { get; set; }
 
+        public bool? SalesOrderByAscending { get; set; }
+
         public bool? SupplyPriceOrderByAscending { get; set; }
 
         public bool? TotalProfitOrderByAscending { get; set; }

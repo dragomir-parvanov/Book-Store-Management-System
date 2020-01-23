@@ -7,6 +7,7 @@ import { subscribeToBookQuery } from "../../Networking/getBooks";
 import DatePopOver from "./SubComponents/PopOvers/DatePopOver";
 import "react-datepicker/dist/react-datepicker.css";
 import AuthorsPopOver from "./SubComponents/PopOvers/AuthorsPopOver";
+import { skip } from "rxjs/operators";
 
 type Props = {};
 
@@ -19,7 +20,7 @@ export default class BooksTable extends React.Component<Props, State> {
     super(props);
 
     // if should renderOrAppend value is true, re-render everything, if its false, just append
-    renderOrAppend.subscribe({
+    renderOrAppend.pipe(skip(1)).subscribe({
       next: s => {
         const rows = s.Books.map(b => <BookRow key={b.Id} book={b}></BookRow>);
         if (s.value) {
@@ -52,7 +53,7 @@ export default class BooksTable extends React.Component<Props, State> {
             <OverlayTrigger trigger="click" placement="bottom" key="authors-overlay-trigger" overlay={<AuthorsPopOver></AuthorsPopOver>}>
               <th>Authors</th>
             </OverlayTrigger>
-            <OverlayTrigger trigger="click" placement="bottom" key="authors-overlay-trigger" overlay={<DatePopOver></DatePopOver>}>
+            <OverlayTrigger trigger="click" placement="bottom" key="date-overlay-trigger" overlay={<DatePopOver></DatePopOver>}>
               <th>Date released</th>
             </OverlayTrigger>
             <th>Genre</th>
