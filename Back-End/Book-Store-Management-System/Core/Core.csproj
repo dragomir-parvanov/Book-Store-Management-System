@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.Linq.Expressions" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Book-Store-Management-System-Data\Book-Store-Management-System-Data.csproj" />
+    <ProjectReference Include="..\Book-Store-Management-System-Models\Book-Store-Management-System-Models.csproj" />
+    <ProjectReference Include="..\Book-Store-Management-System\Book-Store-Management-System.csproj" />
+  </ItemGroup>
+
+</Project>
