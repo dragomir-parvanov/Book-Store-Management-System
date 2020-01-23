@@ -14,7 +14,7 @@ import BookModel from "../Models/Book/BookModel";
 export function subscribeToBookQuery(): void {
   currentBookQuery.pipe().subscribe({
     next: query => {
-      Axios.get<BookModel[]>("https://localhost:5001/api/getbooks/" + buildQuery(query, StartingNumberOfEntitiesInTableConstant, true))
+      Axios.get<BookModel[]>("https://localhost:5001/api/books/" + buildQuery(query, StartingNumberOfEntitiesInTableConstant, true))
         .then(r => {
           const books = r.data;
           //downloadedBooks.push(...r.data.inBetween.map(e => e.book));
@@ -39,7 +39,7 @@ export function subscribeToBookQuery(): void {
  */
 export function getMoreBooks(): void {
   PendingRequest.isPending = true;
-  Axios.get<BookModel[]>("https://localhost:5001/api/getbooks/" + buildQuery(currentBookQuery.getValue(), EntitiesAfterBottomScrollConstant, false))
+  Axios.get<BookModel[]>("https://localhost:5001/api/books/" + buildQuery(currentBookQuery.getValue(), EntitiesAfterBottomScrollConstant, false))
     .then(r => {
       //downloadedBooks.push(...r.data.inBetween.map(e => e.book));
       // const books = buildRender(r.data);

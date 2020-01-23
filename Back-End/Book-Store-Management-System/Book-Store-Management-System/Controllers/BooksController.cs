@@ -37,7 +37,6 @@
         [HttpGet]
         public async Task<ActionResult<IEnumerable<IBookModel>>> Books([FromQuery]GetBooksQueryModel query)
         {
-            Console.WriteLine(query.ProfitOrderByAscending);
             var books = await this.getBooksByQueryService.GetBooks(query).ConfigureAwait(false);
             return this.Ok(books);
         }
