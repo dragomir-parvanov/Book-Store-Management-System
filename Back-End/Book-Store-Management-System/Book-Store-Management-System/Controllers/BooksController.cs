@@ -16,14 +16,14 @@
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class GetBooksController : ControllerBase
+    public class BooksController : ControllerBase
     {
         private readonly IGetBooksByQueryService getBooksByQueryService;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetBooksController"/> class.
+        /// Initializes a new instance of the <see cref="BooksController"/> class.
         /// </summary>
-        public GetBooksController(IGetBooksByQueryService getBooksByQueryService)
+        public BooksController(IGetBooksByQueryService getBooksByQueryService)
         {
             this.getBooksByQueryService = getBooksByQueryService
                 ?? throw new ArgumentNullException(nameof(getBooksByQueryService));
@@ -35,7 +35,7 @@
         /// </summary>
         /// <returns>Books json.</returns>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<IBookModel>>> GetBooks([FromQuery]GetBooksQueryModel query)
+        public async Task<ActionResult<IEnumerable<IBookModel>>> Books([FromQuery]GetBooksQueryModel query)
         {
             Console.WriteLine(query.ProfitOrderByAscending);
             var books = await this.getBooksByQueryService.GetBooks(query).ConfigureAwait(false);
