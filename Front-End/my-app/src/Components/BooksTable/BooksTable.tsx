@@ -26,7 +26,9 @@ export default class BooksTable extends React.Component<Props, State> {
         if (s.value) {
           this.setState({ rows: rows });
         } else {
-          this.setState({ rows: [...this.state.rows, ...s.Books.map(b => <BookRow key={b.Id} book={b}></BookRow>)] });
+          this.setState({
+            rows: [...this.state.rows, ...s.Books.map(b => <BookRow key={b.Id} book={b}></BookRow>)]
+          });
         }
       }
     });
@@ -47,17 +49,19 @@ export default class BooksTable extends React.Component<Props, State> {
   render(): JSX.Element {
     return (
       <Table striped bordered hover>
-        <thead>
+        <thead style={{ position: "-webkit-sticky" }}>
           <tr>
-            <th>Name</th>
+            <th>Book name</th>
             <OverlayTrigger trigger="click" placement="bottom" key="authors-overlay-trigger" overlay={<AuthorsPopOver></AuthorsPopOver>}>
-              <th>Authors</th>
+              <th>Author name</th>
             </OverlayTrigger>
             <OverlayTrigger trigger="click" placement="bottom" key="date-overlay-trigger" overlay={<DatePopOver></DatePopOver>}>
               <th>Date released</th>
             </OverlayTrigger>
             <th>Genre</th>
-            <th onClick={retailPriceOnClick}>Retail price</th>
+            <th style={{ width: "10%" }} onClick={retailPriceOnClick}>
+              Retail price
+            </th>
             <th onClick={supplyPriceOnClick}>Supply price</th>
             <th onClick={profitOnClick}>Profit</th>
             <th onClick={salesOnClick}>Sales</th>
