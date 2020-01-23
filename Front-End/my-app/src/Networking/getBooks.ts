@@ -6,7 +6,6 @@ import StartingNumberOfEntitiesInTableConstant from "../Constants/StartingNumber
 import EntitiesAfterBottomScrollConstant from "../Constants/EntitiesAfterBottomScrollConstant";
 import PendingRequest from "./PendingRequest";
 import BookModel from "../Models/Book/BookModel";
-import { skip, take } from "rxjs/operators";
 
 /**
  * Subscribing to the book query, so it will send a new request on a new query.
@@ -20,7 +19,9 @@ export function subscribeToBookQuery(): void {
           const books = r.data;
           //downloadedBooks.push(...r.data.inBetween.map(e => e.book));
           //const books = buildRender(r.data);
-
+          books.forEach(b => {
+            b.DateReleased = new Date(b.DateReleased);
+          });
           downloadedBooks.push(...books);
           renderOrAppend.next({
             value: true,
@@ -44,6 +45,9 @@ export function getMoreBooks(): void {
       // const books = buildRender(r.data);
 
       const books = r.data;
+      books.forEach(b => {
+        b.DateReleased = new Date(b.DateReleased);
+      });
       downloadedBooks.push(...books);
       renderOrAppend.next({
         value: false,
