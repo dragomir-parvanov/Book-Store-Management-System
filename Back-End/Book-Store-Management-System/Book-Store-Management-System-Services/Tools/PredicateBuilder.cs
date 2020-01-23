@@ -14,7 +14,7 @@ namespace Book_Store_Management_System_Services.Tools
     public static class PredicateBuilder
     {
         /// <summary>
-        /// Chaining one expression to another with the && opeator
+        /// Chaining one expression to another with the && opeator.
         /// </summary>
         /// <typeparam name="T">The type which properties we will build the expression</typeparam>
         /// <param name="a">Prototyping Expression</param>

@@ -39,6 +39,8 @@ namespace Book_Store_Management_System
                        .AllowAnyMethod()
                        .AllowAnyHeader();
             }));
+
+            // Using PascalCase instead of camelCase
             services.AddMvc().AddJsonOptions(options =>
             {
                 options.JsonSerializerOptions.PropertyNamingPolicy = null;
