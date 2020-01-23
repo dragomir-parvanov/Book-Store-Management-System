@@ -1,18 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import { getMoreBooks } from "./Networking/getBooks";
-import PendingRequest from "./Networking/PendingRequest";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));
 
-// infitie scroll
-document.onscroll = function(): void {
-  if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
-    if (!PendingRequest.isPending) {
-      console.log("infinite scroll");
-      getMoreBooks();
-    }
-  }
-};
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();

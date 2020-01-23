@@ -1,8 +1,0 @@
-E:\Desktop\Book-Store-Management-System\Back-End\Book-Store-Management-System\Book-Store-Management-System-Models\bin\Debug\netstandard2.1\Book-Store-Management-System-Models.deps.json
-E:\Desktop\Book-Store-Management-System\Back-End\Book-Store-Management-System\Book-Store-Management-System-Models\bin\Debug\netstandard2.1\Book-Store-Management-System-Models.dll
-E:\Desktop\Book-Store-Management-System\Back-End\Book-Store-Management-System\Book-Store-Management-System-Models\bin\Debug\netstandard2.1\Book-Store-Management-System-Models.pdb
-E:\Desktop\Book-Store-Management-System\Back-End\Book-Store-Management-System\Book-Store-Management-System-Models\obj\Debug\netstandard2.1\Book-Store-Management-System-Models.AssemblyInfoInputs.cache
-E:\Desktop\Book-Store-Management-System\Back-End\Book-Store-Management-System\Book-Store-Management-System-Models\obj\Debug\netstandard2.1\Book-Store-Management-System-Models.AssemblyInfo.cs
-E:\Desktop\Book-Store-Management-System\Back-End\Book-Store-Management-System\Book-Store-Management-System-Models\obj\Debug\netstandard2.1\Book-Store-Management-System-Models.dll
-E:\Desktop\Book-Store-Management-System\Back-End\Book-Store-Management-System\Book-Store-Management-System-Models\obj\Debug\netstandard2.1\Book-Store-Management-System-Models.pdb
-E:\Desktop\Book-Store-Management-System\Back-End\Book-Store-Management-System\Book-Store-Management-System-Models\obj\Debug\netstandard2.1\Book-Store-Management-System-Models.csprojAssemblyReference.cache

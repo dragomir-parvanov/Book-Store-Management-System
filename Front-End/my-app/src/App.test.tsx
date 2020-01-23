@@ -1,11 +1,9 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import App from "./App";
-import { truncateToDecimalPlaces } from "./Functions/calculateProfit";
-import BookQueryModel from "./Models/Networking/BookQueryModel";
-import buildQuery from "./Functions/Networking/buildQuery";
+import React from 'react';
+import { render } from '@testing-library/react';
+import App from './App';
 
-test("Cutting decimal places", () => {
-  const number = 1.35657;
-  expect(truncateToDecimalPlaces(number, 2)).toBe(1.35);
+test('renders learn react link', () => {
+  const { getByText } = render(<App />);
+  const linkElement = getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
 });
