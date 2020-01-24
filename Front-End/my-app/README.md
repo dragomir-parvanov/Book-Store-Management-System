@@ -1,5 +1,5 @@
 ### Used technologies
-React-Boostrap library, rxjs(BehaviourSubject), Axios(HTTP requests), React, Typescript
+React-Boostrap library, rxjs(BehaviourSubject), Axios(HTTP requests), React, Typescript, ESlint&prettier
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
